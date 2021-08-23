@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  slack-emoji-migrate:
+    build: .
+    volumes:
+      - ./output:/usr/src/app/output
+    environment:
+      - SLACK_API_TOKEN=${SLACK_API_TOKEN}
+      - MATTERMOST_URL=${MATTERMOST_URL}
+      - MATTERMOST_TOKEN=${MATTERMOST_TOKEN}
