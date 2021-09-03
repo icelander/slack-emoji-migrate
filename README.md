@@ -33,6 +33,7 @@ Create a file in this directory with these contents:
 SLACK_API_TOKEN=<Slack API token>
 MATTERMOST_URL=<Your Mattermost URL>
 MATTERMOST_TOKEN=<Your Mattermost Authentication Token>
+SLACK_TIMEOUT=360
 ```
 
 Replace the values
@@ -53,6 +54,7 @@ services:
       - SLACK_API_TOKEN=xoxb-abc1234.....
       - MATTERMOST_URL=https://mattermost.example.com/
       - MATTERMOST_TOKEN=ncdfitoh9inixpbycp81f1zkia
+      - SLACK_TIMEOUT=360
 ```
 
 ### 4. Run the script

@@ -17,7 +17,13 @@ Slack.configure do |config|
   raise 'Missing ENV[SLACK_API_TOKEN]!' unless config.token
 end
 
-client = Slack::Web::Client.new
+client_options = {}
+
+if ! ENV['SLACK_TIMEOUT'].nil? && ENV['SLACK_TIMEOUT'].to_i > 0
+  	client_options[:timeout] = ENV['SLACK_TIMEOUT'].to_i
+end
+
+client = Slack::Web::Client.new(client_options)
 client.auth_test
 
 emoji_response = client.emoji_list
